@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habiba Kotb | Computer & AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        ios: {
+                            bg: '#080C14',
+                            card: 'rgba(21, 28, 44, 0.55)',
+                            cardHover: 'rgba(28, 38, 60, 0.75)',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            borderHover: 'rgba(6, 182, 212, 0.35)',
+                            accent: '#06b6d4',
+                            accentGlow: 'rgba(6, 182, 212, 0.15)',
+                            purple: '#8b5cf6',
+                            blue: '#3b82f6',
+                            green: '#10b981',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #080C14;
+            color: #E2E8F0;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(59, 130, 246, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .widget-card {
+            background: rgba(18, 25, 40, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .widget-card:hover {
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 12px 40px -10px rgba(6, 182, 212, 0.2);
+            transform: translateY(-3px) scale(1.005);
+        }
+
+        .ios-glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080C14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 99px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 182, 212, 0.4);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+        }
+        
+        .tab-btn.active, .skill-tab-btn.active, .project-tab-btn.active {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(59, 130, 246, 0.2));
+            border-color: rgba(6, 182, 212, 0.5);
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen pb-16 pt-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto selection:bg-cyan-500/30 selection:text-cyan-200">
+
+    <header class="mb-8 flex flex-col md:flex-row items-center justify-between gap-4 widget-card p-4 rounded-3xl">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 p-0.5 overflow-hidden shadow-lg shadow-cyan-500/20">
+                <img src="profile pic.jpeg" alt="Habiba Kotb Avatar" class="w-full h-full object-cover rounded-[14px]" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-full h-full bg-slate-900 flex items-center justify-center font-bold text-white\'>HK</div>'">
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                    Habiba Kotb
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Available for opportunities"></span>
+                    <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
+                </h1>
+                <p class="text-xs text-slate-400 font-mono flex items-center gap-1">
+                    <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-blue-400"></i>
+                    Ain Shams x UEL • Dual Degree
+                </p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2 flex-wrap justify-center">
+            <a href="https://github.com/habibaKotb" target="_blank" rel="noopener noreferrer" 
+               class="px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/5 transition flex items-center gap-2">
+                <i data-lucide="github" class="w-4 h-4"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/habiba-kotb" target="_blank" rel="noopener noreferrer" 
+               class="px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/5 transition flex items-center gap-2">
+                <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn
+            </a>
+            <button onclick="copyToClipboard('EngHabiba.95@gmail.com', 'Email copied!')" 
+                    class="px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/5 transition flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i> Copy Email
+            </button>
+            <a href="Habiba_Kotb_Resume.pdf" download="Habiba_Kotb_Resume.pdf" target="_blank"
+               class="px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/25 transition flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i> Download CV
+            </a>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-min">
+
+        <!-- HERO WIDGET -->
+        <section class="widget-card lg:col-span-2 md:col-span-2 rounded-3xl p-6 lg:p-8 flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute -right-10 -top-10 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div>
+                <div class="flex items-start justify-between gap-4 mb-6">
+                    <div class="relative">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-600 p-0.5 shadow-xl shadow-cyan-500/20">
+                            <div class="w-full h-full bg-slate-900 rounded-[22px] flex items-center justify-center overflow-hidden relative group">
+                                <img src="profile pic.jpeg" alt="Habiba Kotb" class="w-full h-full object-cover rounded-[22px] group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-2xl font-bold text-white\'>HK</span>'">
+                            </div>
+                        </div>
+                        <span class="absolute -bottom-1 -right-1 flex h-4 w-4">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-slate-900"></span>
+                        </span>
+                    </div>
+
+                    <div class="ios-glass px-3 py-1.5 rounded-2xl flex items-center gap-2 text-xs text-slate-300">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i>
+                        <span>GPA <strong class="text-white">3.72</strong> / 4.0</span>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 flex items-center gap-2">
+                    Habiba Kotb
+                    <i data-lucide="wand-2" class="w-5 h-5 text-purple-400"></i>
+                </h2>
+                <p class="text-cyan-400 font-medium text-sm sm:text-base mb-4 flex items-center gap-1.5">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> Computer & AI Engineering Student
+                </p>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                    Computer and AI Engineering student with solid foundations in software, systems, and databases, and hands-on experience in ML and Agile delivery. Committed to building reliable digital tools for sustainable development.
+                </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-500"></i>
+                    <span>Cairo, Egypt</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-slate-500"></i>
+                    <button onclick="copyToClipboard('+201125481699', 'Phone number copied!')" class="hover:text-cyan-300 transition flex items-center gap-1">
+                        +20 1125481699
+                    </button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i>
+                    <button onclick="copyToClipboard('EngHabiba.95@gmail.com', 'Email copied!')" class="hover:text-cyan-300 transition flex items-center gap-1">
+                        EngHabiba.95@gmail.com
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT WIDGET -->
+        <section class="widget-card rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="p-2 rounded-2xl bg-cyan-500/10 text-cyan-400">
+                        <i data-lucide="user-check" class="w-5 h-5"></i>
+                    </span>
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                        <i data-lucide="heart" class="w-3 h-3 text-pink-400"></i> About Me
+                    </span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-2 flex items-center gap-1.5">
+                    Objective & Focus
+                    <i data-lucide="compass" class="w-4 h-4 text-cyan-400"></i>
+                </h3>
+                <p class="text-slate-300 text-xs leading-relaxed">
+                    Undergraduate dual-degree engineering candidate spanning hardware-aware systems design, custom kernels, machine learning models, and modern Agile delivery.
+                </p>
+            </div>
+            
+            <div class="mt-4 pt-3 border-t border-white/5 grid grid-cols-2 gap-2 text-center">
+                <div class="ios-glass p-2 rounded-xl">
+                    <div class="text-lg font-bold text-cyan-400 flex items-center justify-center gap-1">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> 2028
+                    </div>
+                    <div class="text-[10px] text-slate-400">Expected Grad</div>
+                </div>
+                <div class="ios-glass p-2 rounded-xl">
+                    <div class="text-lg font-bold text-blue-400 flex items-center justify-center gap-1">
+                        <i data-lucide="award" class="w-4 h-4"></i> 6+
+                    </div>
+                    <div class="text-[10px] text-slate-400">Traineeships</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION WIDGET -->
+        <section class="widget-card rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="p-2 rounded-2xl bg-blue-500/10 text-blue-400">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </span>
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                        <i data-lucide="book-open" class="w-3 h-3 text-blue-400"></i> Education
+                    </span>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-white">
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="laptop" class="w-3.5 h-3.5 text-cyan-400"></i> B.Eng. Computer & AI
+                            </span>
+                            <span class="text-cyan-400 font-mono">2024–2028</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-0.5">Ain Shams Univ. × Univ. of East London</p>
+                        <p class="text-[11px] text-slate-500 mt-1 flex items-center gap-1">
+                            <i data-lucide="star" class="w-3 h-3 text-amber-400"></i> Dual Degree • GPA: 3.72/4.0
+                        </p>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/5">
+                        <div class="flex items-center justify-between text-xs font-semibold text-white">
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="school" class="w-3.5 h-3.5 text-purple-400"></i> Secondary Certificate
+                            </span>
+                            <span class="text-slate-400 font-mono">95%</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-0.5">Qaitbay Private Language School</p>
+                        <p class="text-[11px] text-emerald-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="trophy" class="w-3 h-3"></i> Ranked 1st in Class
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS BENTO WIDGET -->
+        <section class="widget-card md:col-span-2 lg:col-span-4 rounded-3xl p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 rounded-2xl bg-cyan-500/10 text-cyan-400">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-base font-bold text-white flex items-center gap-2">
+                            Technical Arsenal & Core Stack
+                            <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                        </h3>
+                        <p class="text-xs text-slate-400">Categorized matrix of technologies & embedded frameworks</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 text-xs">
+                    <button onclick="filterSkills('all')" class="skill-tab-btn active px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> All
+                    </button>
+                    <button onclick="filterSkills('languages')" class="skill-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Languages
+                    </button>
+                    <button onclick="filterSkills('ai')" class="skill-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="brain-circuit" class="w-3.5 h-3.5"></i> AI & Frameworks
+                    </button>
+                    <button onclick="filterSkills('hardware')" class="skill-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Hardware & EDA
+                    </button>
+                    <button onclick="filterSkills('network')" class="skill-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="network" class="w-3.5 h-3.5"></i> Networking
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3" id="skills-container">
+                <div class="skill-card ios-glass rounded-2xl p-4 border border-white/5" data-category="languages">
+                    <div class="text-xs font-bold text-cyan-400 mb-2.5 flex items-center justify-between">
+                        <span>Languages</span>
+                        <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">C</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">C++</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Python</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Java</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">C#</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">SQL</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">MIPS Assembly</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">VHDL</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">JavaScript</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">HTML</span>
+                    </div>
+                </div>
+
+                <div class="skill-card ios-glass rounded-2xl p-4 border border-white/5" data-category="ai">
+                    <div class="text-xs font-bold text-purple-400 mb-2.5 flex items-center justify-between">
+                        <span>Frameworks & AI</span>
+                        <i data-lucide="brain-circuit" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">PyTorch</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">TensorFlow</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Pandas</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">NumPy</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">MLflow</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Hugging Face</span>
+                    </div>
+                </div>
+
+                <div class="skill-card ios-glass rounded-2xl p-4 border border-white/5" data-category="tools">
+                    <div class="text-xs font-bold text-blue-400 mb-2.5 flex items-center justify-between">
+                        <span>Dev Tools & Practices</span>
+                        <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">SQL Server</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Git / GitHub</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">VS Code</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Qt 6</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Eclipse</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Jira</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">SDLC & Agile</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">UML / OOP</span>
+                    </div>
+                </div>
+
+                <div class="skill-card ios-glass rounded-2xl p-4 border border-white/5" data-category="hardware">
+                    <div class="text-xs font-bold text-emerald-400 mb-2.5 flex items-center justify-between">
+                        <span>Hardware & EDA</span>
+                        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">ATmega328P</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Arduino</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">FPGA</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Xilinx ISE</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">LTspice</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Logisim</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Proteus</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">MATLAB</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Embedded Linux</span>
+                    </div>
+                </div>
+
+                <div class="skill-card ios-glass rounded-2xl p-4 border border-white/5" data-category="network">
+                    <div class="text-xs font-bold text-amber-400 mb-2.5 flex items-center justify-between">
+                        <span>Networking</span>
+                        <i data-lucide="network" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">CCNA</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">TCP/IP</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">IPv4 / IPv6</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Network Security</span>
+                        <span class="px-2 py-1 rounded-lg bg-white/5 text-[11px] text-slate-200 border border-white/5">Cisco Packet Tracer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="widget-card md:col-span-2 lg:col-span-4 rounded-3xl p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 rounded-2xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400">
+                        <i data-lucide="folder-git-2" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-base font-bold text-white flex items-center gap-2">
+                            Featured Projects
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-xs text-cyan-400 font-mono hover:underline flex items-center gap-1">
+                                @habibaKotb <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-400">Software systems, deep learning pipelines, compilers, and hardware developments</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 text-xs">
+                    <button onclick="filterProjects('all')" class="project-tab-btn active px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i> All Projects
+                    </button>
+                    <button onclick="filterProjects('ai')" class="project-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="brain" class="w-3.5 h-3.5 text-purple-400"></i> AI & ML
+                    </button>
+                    <button onclick="filterProjects('kernel')" class="project-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i> OS & Systems
+                    </button>
+                    <button onclick="filterProjects('compiler')" class="project-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="code" class="w-3.5 h-3.5 text-blue-400"></i> Compilers
+                    </button>
+                    <button onclick="filterProjects('database')" class="project-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="database" class="w-3.5 h-3.5 text-emerald-400"></i> DB & Software
+                    </button>
+                    <button onclick="filterProjects('hardware')" class="project-tab-btn px-3 py-1.5 rounded-xl ios-glass text-slate-300 font-medium whitespace-nowrap transition flex items-center gap-1">
+                        <i data-lucide="circuit-board" class="w-3.5 h-3.5 text-amber-400"></i> Hardware & EDA
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="projects-container">
+
+                <!-- EXISTING PROJECT 1 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-purple-500/40 transition" data-tag="ai">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20 flex items-center gap-1">
+                                <i data-lucide="brain-circuit" class="w-3 h-3 text-purple-400"></i> PyTorch • Deep Learning
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition mb-2 flex items-center gap-1.5">
+                            Scene Style Classification
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Co-built an ensemble image classifier combining EfficientNet-V2-M and ConvNeXT architectures. Owned the fine-tuning and optimization of EfficientNet-V2-M.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Python</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">PyTorch</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">EfficientNet</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">ConvNeXT</span>
+                    </div>
+                </div>
+
+                <!-- EXISTING PROJECT 2 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-cyan-500/40 transition" data-tag="kernel">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 flex items-center gap-1">
+                                <i data-lucide="cpu" class="w-3 h-3 text-cyan-400"></i> C • OS Design
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition mb-2 flex items-center gap-1.5">
+                            FOS Kernel Development
+                            <i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Collaborated to develop core subsystems for FOS custom x86 OS. Designed a Next-Fit heap allocator, Nth-Chance Clock demand-paging fault handler, & pre-emptive MLFQ CPU scheduler.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">C</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">x86 OS</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Paging</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">MLFQ Scheduler</span>
+                    </div>
+                </div>
+
+                <!-- EXISTING PROJECT 3 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-blue-500/40 transition" data-tag="compiler">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/20 flex items-center gap-1">
+                                <i data-lucide="code" class="w-3 h-3 text-blue-400"></i> C# • Compilers
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition mb-2 flex items-center gap-1.5">
+                            TinyLanguage Scanner & Parser
+                            <i data-lucide="binary" class="w-3.5 h-3.5 text-blue-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Co-built a two-phase compiler for TinyLanguage: lexical scanner producing token streams and recursive descent parser generating structured parse trees in C# GUI.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">C#</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Compiler</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Lexer</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">GUI Parse Tree</span>
+                    </div>
+                </div>
+
+                <!-- EXISTING PROJECT 4 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-emerald-500/40 transition" data-tag="database">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center gap-1">
+                                <i data-lucide="database" class="w-3 h-3 text-emerald-400"></i> SQL Server • C#
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition mb-2 flex items-center gap-1.5">
+                            Cinema Ticket Booking System
+                            <i data-lucide="ticket" class="w-3.5 h-3.5 text-emerald-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Designed normalized relational schemas and C# GUI for end-to-end booking management, seat allocation, customer records, and multi-query reporting.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">T-SQL</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">SSMS</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">C#</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Relational DB</span>
+                    </div>
+                </div>
+
+                <!-- NEW GITHUB PROJECT 1 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-amber-500/40 transition" data-tag="hardware">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/20 flex items-center gap-1">
+                                <i data-lucide="circuit-board" class="w-3 h-3 text-amber-400"></i> VHDL • Xilinx ISE
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition mb-2 flex items-center gap-1.5">
+                            32-Bit MIPS Processor
+                            <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Co-designed & synthesized a functional 32-bit single-cycle MIPS CPU featuring custom branch units and ALU hardware extensions (Achieved 120% grade).
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">VHDL</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">MIPS</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Xilinx ISE</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Digital Logic</span>
+                    </div>
+                </div>
+
+                <!-- NEW GITHUB PROJECT 2 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-cyan-500/40 transition" data-tag="database">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 flex items-center gap-1">
+                                <i data-lucide="git-fork" class="w-3 h-3 text-cyan-400"></i> C++ • Qt 6 GUI
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition mb-2 flex items-center gap-1.5">
+                            Fibonacci Heap & Qt GUI
+                            <i data-lucide="layers" class="w-3.5 h-3.5 text-cyan-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Implemented a templated C++ Fibonacci Heap with amortized operation bounds, alongside interactive Qt 6 desktop interfaces for algorithm visualizer and triage.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">C++</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Qt 6</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">DSA</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Fibonacci Heap</span>
+                    </div>
+                </div>
+
+                <!-- NEW GITHUB PROJECT 3 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-indigo-500/40 transition" data-tag="database">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 flex items-center gap-1">
+                                <i data-lucide="file-text" class="w-3 h-3 text-indigo-400"></i> C++ • Software Eng.
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-indigo-400 transition mb-2 flex items-center gap-1.5">
+                            Vehicle Rental System SRS
+                            <i data-lucide="car" class="w-3.5 h-3.5 text-indigo-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Co-authored a comprehensive 94-page Software Requirements Specification document & complete UML diagram suite for a vehicle rental application.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">UML</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">SRS Document</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">C++</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Qt 6</span>
+                    </div>
+                </div>
+
+                <!-- NEW GITHUB PROJECT 4 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-emerald-500/40 transition" data-tag="hardware">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center gap-1">
+                                <i data-lucide="bot" class="w-3 h-3 text-emerald-400"></i> Embedded C • AVR
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition mb-2 flex items-center gap-1.5">
+                            Autonomous MicroMouse Navigation
+                            <i data-lucide="trophy" class="w-3.5 h-3.5 text-emerald-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Programmed autonomous real-time maze-solving navigation algorithms & sensor integration on ATmega328P MicroMouse JQ (2nd Place ASU Competition).
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Embedded C</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">ATmega328P</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Robotics</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">PWM Motors</span>
+                    </div>
+                </div>
+
+                <!-- NEW GITHUB PROJECT 5 -->
+                <div class="project-card ios-glass rounded-2xl p-5 border border-white/5 flex flex-col justify-between group hover:border-pink-500/40 transition" data-tag="hardware">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 border border-pink-500/20 flex items-center gap-1">
+                                <i data-lucide="zap" class="w-3 h-3 text-pink-400"></i> Circuit Design & Simulation
+                            </span>
+                            <a href="https://github.com/habibaKotb" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-pink-400 transition mb-2 flex items-center gap-1.5">
+                            Signed ALU & Power Supply
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-400"></i>
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Designed & simulated a 4-bit signed ALU in Logisim + full-wave bridge rectifier AC-DC adjustable variable power supply using LTspice & LM317 regulator.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">LTspice</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Logisim</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">4-bit ALU</span>
+                        <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">Hardware Design</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE TIMELINE WIDGET -->
+        <section class="widget-card md:col-span-2 rounded-3xl p-6">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 rounded-2xl bg-cyan-500/10 text-cyan-400">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-base font-bold text-white flex items-center gap-2">
+                            Experience & Traineeships
+                            <i data-lucide="rocket" class="w-4 h-4 text-cyan-400"></i>
+                        </h3>
+                        <p class="text-xs text-slate-400">Industry training programs & practical engineering impact</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-white/5">
+                
+                <div class="relative pl-8 group">
+                    <div class="absolute left-2 top-1.5 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-slate-900 group-hover:scale-125 transition"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span class="font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="database" class="w-3.5 h-3.5 text-cyan-400"></i> DEPI | Data Science Trainee
+                        </span>
+                        <span class="font-mono text-cyan-400">IBM • Jul 2026 – Present</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1">Python, SQL, data analysis/visualization, ML, and MLOps (MLflow, Hugging Face).</p>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute left-2 top-1.5 w-3 h-3 rounded-full bg-blue-400 ring-4 ring-slate-900 group-hover:scale-125 transition"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span class="font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="network" class="w-3.5 h-3.5 text-blue-400"></i> NTI | Network Infrastructure Trainee
+                        </span>
+                        <span class="font-mono text-slate-400">CCNA • Aug 2026</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1">CCNA-aligned program covering routing/switching, IPv4/IPv6 addressing, network security, and troubleshooting.</p>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute left-2 top-1.5 w-3 h-3 rounded-full bg-indigo-400 ring-4 ring-slate-900 group-hover:scale-125 transition"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span class="font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="terminal" class="w-3.5 h-3.5 text-indigo-400"></i> Edges Academy | Embedded Linux Trainee
+                        </span>
+                        <span class="font-mono text-slate-400">Jul – Aug 2026</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1">Linux booting, cross-compilation, kernel/filesystem builds, and Linux administration.</p>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute left-2 top-1.5 w-3 h-3 rounded-full bg-purple-400 ring-4 ring-slate-900 group-hover:scale-125 transition"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span class="font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-400"></i> iCareer | Digitera Tech Trainee
+                        </span>
+                        <span class="font-mono text-slate-400">Jul 2026</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1">AI-assisted development (Cursor, Claude Code, MCP), Git/GitHub collaboration, Agile delivery (Jira, sprint planning), BRD→PRD capstone delivery.</p>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute left-2 top-1.5 w-3 h-3 rounded-full bg-emerald-400 ring-4 ring-slate-900 group-hover:scale-125 transition"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span class="font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="bot" class="w-3.5 h-3.5 text-emerald-400"></i> Luban Workshop ASU | Robotics Trainee
+                        </span>
+                        <span class="font-mono text-slate-400">Feb 2026</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1">Programmed an autonomous maze-solving robot (MicroMouse JQ, ATmega328P) with real-time navigation & multi-sensor integration.</p>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute left-2 top-1.5 w-3 h-3 rounded-full bg-amber-400 ring-4 ring-slate-900 group-hover:scale-125 transition"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span class="font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-400"></i> Edges For Training | Embedded Systems Level 1
+                        </span>
+                        <span class="font-mono text-slate-400">Jul 2025</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1">Register-level C programming on ATmega microcontrollers, state-machine I/O counter system, & PWM motor controls.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS & AWARDS WIDGET -->
+        <section class="widget-card rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="p-2 rounded-2xl bg-amber-500/10 text-amber-400">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </span>
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                        <i data-lucide="star" class="w-3 h-3 text-amber-400"></i> Honors & Certs
+                    </span>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="ios-glass p-2.5 rounded-xl">
+                        <div class="text-xs font-bold text-amber-300 flex items-center justify-between">
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-400"></i> 2nd Place MicroMouse
+                            </span>
+                            <span class="text-[10px] text-slate-400 font-mono">2026</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300 mt-0.5">ASU MicroMouse Competition</p>
+                    </div>
+
+                    <div class="ios-glass p-2.5 rounded-xl">
+                        <div class="text-xs font-bold text-amber-300 flex items-center justify-between">
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i> 1st Place Presentation
+                            </span>
+                            <span class="text-[10px] text-slate-400 font-mono">2024</span>
+                        </div>
+                        <p class="text-[11px] text-slate-300 mt-0.5">Most Influential Presentation ASU</p>
+                    </div>
+
+                    <div class="pt-2 border-t border-white/5 space-y-1.5 text-xs">
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            <span>Huawei Cloud Certified Dev</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            <span>IELTS 7.0 Overall (C1 Level)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            <span>Google Build With AI (GDG & ITI)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            <span>Power Query Excel (Simplilearn)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LANGUAGES & CV QUICK DOWNLOAD WIDGET -->
+        <section class="widget-card rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="p-2 rounded-2xl bg-purple-500/10 text-purple-400">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
+                    </span>
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                        <i data-lucide="globe" class="w-3 h-3 text-purple-400"></i> Languages
+                    </span>
+                </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-white font-medium flex items-center gap-1">
+                            <i data-lucide="heart-handshake" class="w-3.5 h-3.5 text-pink-400"></i> Arabic
+                        </span>
+                        <span class="text-cyan-400 font-mono text-[11px]">Native</span>
+                    </div>
+                    <div class="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-cyan-400 h-full w-full"></div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs pt-1">
+                        <span class="text-white font-medium flex items-center gap-1">
+                            <i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-400"></i> English
+                        </span>
+                        <span class="text-blue-400 font-mono text-[11px]">Fluent (IELTS 7.0 / C1)</span>
+                    </div>
+                    <div class="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-blue-400 h-full w-[90%]"></div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs pt-1">
+                        <span class="text-white font-medium flex items-center gap-1">
+                            <i data-lucide="sparkle" class="w-3.5 h-3.5 text-purple-400"></i> French
+                        </span>
+                        <span class="text-purple-400 font-mono text-[11px]">Proficient</span>
+                    </div>
+                    <div class="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-purple-400 h-full w-[65%]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/5">
+                <a href="Habiba_Kotb_Resume.pdf" download="Habiba_Kotb_Resume.pdf" target="_blank"
+                   class="w-full py-2.5 rounded-2xl bg-white/5 hover:bg-cyan-500/10 hover:border-cyan-500/30 text-white font-semibold text-xs border border-white/10 transition flex items-center justify-center gap-2 group">
+                    <i data-lucide="download" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition"></i> Download Resume PDF
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-8 widget-card rounded-3xl p-6 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-400 flex items-center gap-1">
+            © 2026 Habiba Kotb. Built with iOS Bento Widget Aesthetic <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i>
+        </p>
+        <div class="flex items-center gap-4 text-xs text-slate-400">
+            <a href="https://github.com/habibaKotb" target="_blank" class="hover:text-cyan-400 transition flex items-center gap-1">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> github.com/habibaKotb
+            </a>
+            <span>•</span>
+            <a href="https://linkedin.com/in/habiba-kotb" target="_blank" class="hover:text-blue-400 transition flex items-center gap-1">
+                <i data-lucide="linkedin" class="w-3.5 h-3.5 text-blue-400"></i> linkedin.com/in/habiba-kotb
+            </a>
+            <span>•</span>
+            <button onclick="copyToClipboard('EngHabiba.95@gmail.com', 'Email copied!')" class="hover:text-cyan-400 transition flex items-center gap-1">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i> EngHabiba.95@gmail.com
+            </button>
+        </div>
+    </footer>
+
+    <!-- RESUME PREVIEW MODAL -->
+    <div id="resume-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="widget-card w-full max-w-3xl rounded-3xl border border-white/10 max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
+            
+            <div class="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between bg-slate-900/60">
+                <div class="flex items-center gap-3">
+                    <img src="profile pic.jpeg" alt="Habiba Kotb" class="w-9 h-9 rounded-xl object-cover" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold\'>HK</div>'">
+                    <div>
+                        <h3 class="text-sm font-bold text-white flex items-center gap-1.5">
+                            Habiba Kotb — Resume PDF View
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i>
+                        </h3>
+                        <p class="text-[11px] text-slate-400">Computer & AI Engineering Undergraduate</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <a href="Habiba_Kotb_Resume.pdf" download="Habiba_Kotb_Resume.pdf" target="_blank" class="px-3 py-1.5 rounded-xl text-xs bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30 flex items-center gap-1.5 transition">
+                        <i data-lucide="download" class="w-3.5 h-3.5"></i> PDF Link
+                    </a>
+                    <button onclick="closeModal('resume-modal')" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition">
+                        <i data-lucide="x" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-6 text-slate-300 text-xs leading-relaxed font-sans">
+                
+                <div class="text-center pb-4 border-b border-white/10">
+                    <h2 class="text-2xl font-bold text-white">Habiba Kotb</h2>
+                    <p class="text-cyan-400 font-medium mt-0.5">Computer and AI Engineering Student</p>
+                    <p class="text-slate-400 text-[11px] mt-1">
+                        +201125481699 • EngHabiba.95@gmail.com • LinkedIn: linkedin.com/in/habiba-kotb • GitHub: github.com/habibaKotb
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2 font-mono flex items-center gap-1">
+                        <i data-lucide="compass" class="w-3.5 h-3.5"></i> Objective
+                    </h4>
+                    <p>Computer and AI Engineering student (GPA 3.72/4.0 dual degree with University of East London) with solid foundations in software, systems, and databases, and hands-on experience in ML and Agile delivery. Committed to building reliable digital tools for sustainable development.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2 font-mono flex items-center gap-1">
+                        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i> Education
+                    </h4>
+                    <div class="space-y-2">
+                        <div>
+                            <div class="flex justify-between font-semibold text-white">
+                                <span>Bachelor of Engineering in Computer and Artificial Intelligence</span>
+                                <span>2024 – 2028</span>
+                            </div>
+                            <div class="text-slate-400">Ain Shams University (dual degree with University of East London) | GPA: 3.72/4.0</div>
+                            <div class="text-[11px] text-slate-400">Coursework: OS, Compilers, Database Systems, DSA, Software Engineering, Computer Organization, Intro to AI</div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-semibold text-white">
+                                <span>General Secondary Education Certificate, Science (Mathematics)</span>
+                                <span>2016 – 2024</span>
+                            </div>
+                            <div class="text-slate-400">Qaitbay Private Language School | Grade: 95% - Ranked 1st in class, top 2 ranking across final 3 years</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2 font-mono flex items-center gap-1">
+                        <i data-lucide="code-2" class="w-3.5 h-3.5"></i> Skills
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                        <div><strong class="text-white">Languages:</strong> C, C++, Python, Java, C#, SQL, MIPS Assembly, VHDL, JavaScript, HTML</div>
+                        <div><strong class="text-white">Frameworks:</strong> PyTorch, TensorFlow, Pandas, NumPy</div>
+                        <div><strong class="text-white">Dev Tools & Practices:</strong> SQL Server, Git/GitHub, VS Code, Qt 6, Eclipse, SDLC, UML, OOP, ML, Cloud Computing, Jira</div>
+                        <div><strong class="text-white">Hardware & EDA:</strong> AVR/ATmega328P, Arduino, FPGA, Xilinx ISE, LTspice, Logisim, Proteus, MATLAB, Embedded Linux, Linux Administration</div>
+                        <div><strong class="text-white">Networking:</strong> CCNA (Routing & Switching), TCP/IP, Network Security, Cisco Packet Tracer</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2 font-mono flex items-center gap-1">
+                        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Experience
+                    </h4>
+                    <ul class="list-disc pl-4 space-y-1.5 text-slate-300">
+                        <li><strong>DEPI | Data Science Trainee (IBM):</strong> Jul 2026 - Present — Learning Python, SQL, data analysis/visualization, ML, and MLOps (MLflow, Hugging Face).</li>
+                        <li><strong>NTI | Network Infrastructure Trainee:</strong> Aug 2026 — Completed CCNA-aligned program covering routing/switching, IPv4/IPv6, security, and troubleshooting.</li>
+                        <li><strong>Edges Academy | Embedded Linux Trainee:</strong> Jul - Aug 2026 — Covered Linux booting, cross-compilation, kernel/filesystem builds, and Linux administration.</li>
+                        <li><strong>iCareer | Digitera Tech Trainee:</strong> Jul 2026 — AI-assisted development (Cursor, Claude Code, MCP), Git/GitHub collaboration, Agile delivery (Jira, sprint planning, BRD→PRD). Built capstone end-to-end product delivery project.</li>
+                        <li><strong>Luban Workshop, Ain Shams University | Robotics Trainee:</strong> Feb 2026 — Programmed autonomous maze-solving robot (MicroMouse JQ, ATmega328P) with real-time navigation & motor control.</li>
+                        <li><strong>Edges For Training | Embedded Systems Level 1 Trainee:</strong> Jul 2025 — Programmed ATmega microcontrollers in C at register level, building FSM digital I/O counter & PWM motor control.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2 font-mono flex items-center gap-1">
+                        <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i> Projects
+                    </h4>
+                    <ul class="list-disc pl-4 space-y-1.5 text-slate-300">
+                        <li><strong>Scene Style Classification (May 2026):</strong> Python, PyTorch, Deep Learning — Co-built ensemble classifier (EfficientNet-V2-M & ConvNeXT). Owned EfficientNet-V2-M fine-tuning.</li>
+                        <li><strong>FOS Kernel Development (May 2026):</strong> C, OS Design — Core subsystems for custom x86 OS. Designed Next-Fit heap allocator, Nth-Chance Clock fault handler, & MLFQ CPU scheduler.</li>
+                        <li><strong>TinyLanguage Scanner & Parser (May 2026):</strong> C#, Compiler Design — Two-phase compiler (lexical scanner & recursive descent parser with parse tree C# GUI).</li>
+                        <li><strong>Cinema Ticket Booking System (May 2026):</strong> SQL Server, T-SQL, C#, SSMS — Normalized relational schema and C# GUI for booking management, seat allocation, and reporting.</li>
+                        <li><strong>32-Bit MIPS Single-Cycle Processor (Dec 2025):</strong> VHDL, Xilinx ISE — Synthesized 32-bit CPU with custom branch and ALU extensions (120% grade).</li>
+                        <li><strong>Fibonacci Heap Library & Qt Visualizer (Jan 2026):</strong> C++, Qt 6 — Templated C++ Fibonacci heap with interactive GUI operation visualizer.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2 font-mono flex items-center gap-1">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Certifications, Languages & Awards
+                    </h4>
+                    <p><strong>Certifications:</strong> Huawei Cloud Certified Developer – Tech Essentials Associate (ITIDA x Huawei Cloud) | IELTS 7.0 (C1) – British Council | Google Build With AI – GDG & ITI | Power Query in Excel – Simplilearn</p>
+                    <p class="mt-1"><strong>Languages:</strong> Arabic (Native) | English (Fluent) | French (Proficient)</p>
+                    <p class="mt-1"><strong>Awards:</strong> 2nd Place, ASU MicroMouse Competition (2026) | 1st Place, Most Influential Presentation, ASU (2024)</p>
+                </div>
+
+            </div>
+
+            <div class="p-4 border-t border-white/10 bg-slate-900/60 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400">Habiba_Kotb_Resume.pdf</span>
+                <a href="Habiba_Kotb_Resume.pdf" download="Habiba_Kotb_Resume.pdf" target="_blank"
+                   class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-90 transition flex items-center gap-1.5">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Official PDF
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="ios-glass px-4 py-3 rounded-2xl border border-cyan-500/30 text-white text-xs shadow-xl flex items-center gap-2 bg-slate-900/90">
+            <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+            <span id="toast-message">Copied to clipboard!</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        function copyToClipboard(text, message = 'Copied to clipboard!') {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Copy failed', err);
+                }
+                document.body.removeChild(textarea);
+            }
+
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function filterSkills(category) {
+            const skillCards = document.querySelectorAll('.skill-card');
+            const buttons = document.querySelectorAll('.skill-tab-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            skillCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+
+        function filterProjects(tag) {
+            const projectCards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.project-tab-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            projectCards.forEach(card => {
+                if (tag === 'all' || card.dataset.tag === tag) {
+                    card.style.display = 'flex';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const resumeModal = document.getElementById('resume-modal');
+            if (event.target === resumeModal) {
+                closeModal('resume-modal');
+            }
+        };
+    </script>
+</body>
+</html>
