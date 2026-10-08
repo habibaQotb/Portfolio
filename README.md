@@ -1,24 +1,16 @@
 # Portfolio
 
-Instructions to set up, view, and run the portfolio website locally.
+🌐 **Live Demo:** [portfolio-nine-sable-70.vercel.app](https://portfolio-nine-sable-70.vercel.app/)
 
 ---
 
-## 🛠️ Prerequisites
+## 🚀 How to View & Run
 
-Make sure you have the following installed on your machine:
+### Option 1: Live Deployment
+View the hosted site directly at **[portfolio-nine-sable-70.vercel.app](https://portfolio-nine-sable-70.vercel.app/)**.
 
-- [Git](https://git-scm.com/)
-- A modern web browser (Google Chrome, Firefox, Edge, etc.)
-- *(Optional)* [VS Code](https://code.visualstudio.com/) with the **Live Server** extension for local hosting
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-Clone this repository to your local machine using terminal or command prompt:
-
-```bash
-git clone [https://github.com/habibaQotb/Portfolio.git](https://github.com/habibaQotb/Portfolio.git)
+### Option 2: Run Locally
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/habibaQotb/Portfolio.git](https://github.com/habibaQotb/Portfolio.git)
+   cd Portfolio
